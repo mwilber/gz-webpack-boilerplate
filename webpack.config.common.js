@@ -18,13 +18,15 @@ const dirApp = path.join(__dirname, 'src');
 const dirSass = path.join(__dirname, 'styles');
 const dirAssets = path.join(__dirname, 'assets');
 const appShell = path.join(__dirname, 'app-shell.css');
+const serviceWorker = path.join(__dirname, 'service-worker.js');
 
 /**
  * Webpack Configuration
  */
 module.exports = {
     entry: {
-        bundle: path.join(dirApp, 'main')
+        bundle: path.join(dirApp, 'main'),
+        'service-worker': serviceWorker
     },
     resolve: {
         modules: [

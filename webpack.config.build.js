@@ -15,7 +15,11 @@ module.exports = merge(webpackConfig, {
 
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: '[name].[chunkhash].js'
+        filename: (chunkData) => {
+            return chunkData.chunk.name === 'service-worker'
+                ? '[name].js'
+                : '[name].[chunkhash:8].js';
+        }
     },
 
     plugins: [
