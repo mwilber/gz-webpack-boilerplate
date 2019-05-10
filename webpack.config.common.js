@@ -15,6 +15,7 @@ const htmlMetadata = {
 const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'src');
 const dirAssets = path.join(__dirname, 'assets');
+const dirSass = path.join(__dirname, 'styles');
 
 /**
  * Webpack Configuration
@@ -27,7 +28,8 @@ module.exports = {
         modules: [
             dirNode,
             dirApp,
-            dirAssets
+            dirAssets,
+            dirSass
         ]
     },
     plugins: [
@@ -77,7 +79,7 @@ module.exports = {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
-                            includePaths: [dirAssets]
+                            includePaths: [dirSass]
                         }
                     }
                 ]
