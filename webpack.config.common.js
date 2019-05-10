@@ -15,9 +15,8 @@ const htmlMetadata = {
 
 const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'src');
-const dirAssets = path.join(__dirname, 'assets');
 const dirSass = path.join(__dirname, 'styles');
-
+const dirAssets = path.join(__dirname, 'assets');
 const appShell = path.join(__dirname, 'app-shell.css');
 
 /**
@@ -45,7 +44,8 @@ module.exports = {
         }),
         new CssPlugin({
 			filename: './app-shell.css'
-		})
+        }),
+        
     ],
     module: {
         rules: [
