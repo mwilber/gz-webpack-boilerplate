@@ -1,3 +1,7 @@
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const htmlMetadata = {
     domain: 'greenzeta.com',
     title: 'GreenZeta Webpack Boilerplate',
@@ -7,10 +11,6 @@ const htmlMetadata = {
     twittername: 'greenzeta',
     facebookid: '631337813',
 };
-
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'src');
