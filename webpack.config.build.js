@@ -5,6 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpackConfig = require('./webpack.config.common');
 
 const dirAssets = path.join(__dirname, 'assets');
+const webManifest = path.join(__dirname, 'manifest.json');
 
 module.exports = merge(webpackConfig, {
 
@@ -23,6 +24,10 @@ module.exports = merge(webpackConfig, {
 			{ 
 				from: dirAssets,
 				to: path.resolve(__dirname, 'dist', 'assets'),
+            },
+            { 
+				from: webManifest,
+				to: path.resolve(__dirname, 'dist'),
 			}
 		]),
     ]
