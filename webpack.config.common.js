@@ -1,3 +1,13 @@
+const htmlMetadata = {
+    domain: 'greenzeta.com',
+    title: 'GreenZeta Webpack Boilerplate',
+    author: 'Matthew Wilber',
+    description: 'Webpack boilerplate using babel & sass.',
+    themecolor: '#7bb951',
+    twittername: 'greenzeta',
+    facebookid: '631337813',
+};
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -5,8 +15,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'src');
 const dirAssets = path.join(__dirname, 'assets');
-
-const appHtmlTitle = 'Webpack Boilerplate';
 
 /**
  * Webpack Configuration
@@ -25,7 +33,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.ejs'),
-            title: appHtmlTitle
+            data: htmlMetadata
         })
     ],
     module: {
