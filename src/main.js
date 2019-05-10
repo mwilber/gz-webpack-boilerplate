@@ -1,4 +1,3 @@
-
 /**
  * Application entry point
  */
