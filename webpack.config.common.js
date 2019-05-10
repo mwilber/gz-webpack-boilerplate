@@ -48,7 +48,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: IS_DEV
+                            sourceMap: false
                         }
                     },
                 ]
@@ -62,13 +62,13 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: IS_DEV
+                            sourceMap: false
                         }
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: IS_DEV,
+                            sourceMap: false,
                             includePaths: [dirAssets]
                         }
                     }
