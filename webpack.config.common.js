@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CssPlugin = require('extract-css-chunks-webpack-plugin');
 
 const htmlMetadata = {
     domain: 'greenzeta.com',
@@ -17,6 +18,8 @@ const dirApp = path.join(__dirname, 'src');
 const dirAssets = path.join(__dirname, 'assets');
 const dirSass = path.join(__dirname, 'styles');
 
+const appShell = path.join(__dirname, 'app-shell.css');
+
 /**
  * Webpack Configuration
  */
@@ -30,13 +33,19 @@ module.exports = {
             dirApp,
             dirAssets,
             dirSass
-        ]
+        ],
+        alias: {
+			'app-shell': appShell,
+		}
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.ejs'),
             data: htmlMetadata
-        })
+        }),
+        new CssPlugin({
+			filename: './app-shell.css'
+		})
     ],
     module: {
         rules: [
@@ -50,23 +59,10 @@ module.exports = {
                 }
             },
 
-            // STYLES
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    }
-                ]
-            },
-
             // CSS / SASS
             {
-                test: /\.scss/,
+                test: /\.(s)?css/,
+                exclude: /app-shell\.css$/,
                 use: [
                     'style-loader',
                     {
@@ -84,6 +80,15 @@ module.exports = {
                     }
                 ]
             },
+
+            /* CSS bundling rule, using SASS */
+			{
+				test: /app-shell\.css$/,
+				use: [
+					{loader: CssPlugin.loader, options: {publicPath: ''}},
+					'css-loader'
+				]
+			},
 
             // IMAGES
             {
