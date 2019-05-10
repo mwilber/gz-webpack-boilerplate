@@ -4,6 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --port 8699 --progress --open --config webpack.config.dev.js",
+    "build": "webpack --progress --config webpack.config.build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
