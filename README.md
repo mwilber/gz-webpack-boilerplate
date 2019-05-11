@@ -1,4 +1,4 @@
-# gz-webpack-boilerplate
+# ![GreenZeta Logo](https://www.greenzeta.com/android-icon-72x72.png) gz-webpack-boilerplate
 ## Webpack 4 Boilerplate
 
 [![Dependency Status](https://david-dm.org/mwilber/gz-webpack-boilerplate.svg)](https://david-dm.org/mwilber/gz-webpack-boilerplate)
