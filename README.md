@@ -89,7 +89,7 @@ Progressive Web Apps allow visitors to install your website and use it as a nati
 2. Service Worker
 3. SSL Hosting
 
-For more information on PWAs and their development, check out the [10 Minute PWA demo](https://github.com/mwilber/gz-10-minute-pwa) from [GreenZeta](http://greenzeta.com)
+For more information on PWAs and their development, check out the [10 Minute PWA demo](https://www.greenzeta.com/the-10-minute-progressive-web-app/) and [The Progressive Web App Philosophy](https://www.greenzeta.com/tessera/the-pwa-philosophy/) from [GreenZeta](http://greenzeta.com)
 
 ## Webpack
 If you're not familiar with webpack, the [webpack-dev-server](https://webpack.js.org/configuration/dev-server/) will serve the static files in your build folder and watch your source files for changes.
