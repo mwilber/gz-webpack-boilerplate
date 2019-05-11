@@ -42,7 +42,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.ejs'),
-            data: htmlMetadata
+            data: htmlMetadata,
+            excludeChunks: ['service-worker']
         }),
         new CssPlugin({
 			filename: './app-shell.css'
