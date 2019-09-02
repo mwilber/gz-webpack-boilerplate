@@ -53,7 +53,7 @@ From within your project directory:
 ```sh
 $ curl -L -o master.zip https://github.com/mwilber/gz-webpack-boilerplate/archive/master.zip && unzip master.zip && rm master.zip && mv -n ./gz-webpack-boilerplate-master/{.,}* ./ && rm -r ./gz-webpack-boilerplate-master
 ```
-Install dependencies
+Install dev dependencies
 ```sh
 $ npm install
 ```
